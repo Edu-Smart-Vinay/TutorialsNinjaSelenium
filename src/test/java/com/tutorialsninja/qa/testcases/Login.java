@@ -14,11 +14,15 @@ public class Login {
 		WebDriver driver = new ChromeDriver();
 		
 		driver.manage().window().maximize();
+		System.out.println("Started Login Test Case");
 		driver.get("https://tutorialsninja.com/demo/");
 		driver.findElement(By.xpath("//a[@title=\"My Account\"]")).click();
 		driver.findElement(By.xpath("//a[text()=\"Login\"]")).click();
 		driver.findElement(By.xpath("//input[@name=\"email\"]")).sendKeys("amotoori3@gmail.com");
 		driver.findElement(By.xpath("//input[@name=\"password\"]")).sendKeys("12345");
 		driver.findElement(By.xpath("//input[@value=\"Login\"]")).click();
+		
+		System.out.println("Finished Test case Login");
+		driver.quit();
 	}
 }

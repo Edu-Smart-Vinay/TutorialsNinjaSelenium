@@ -26,7 +26,7 @@ public class spectrumLogin {
 		
 		driver.manage().window().maximize();
 		
-		
+		System.out.println("Spectrum Login Test case");
 		driver.get("https://vm-qc-rt-5.iongroup.net/ClientPortal/login.aspx"); 
 		
 		Thread.sleep(2000);
@@ -78,7 +78,7 @@ public class spectrumLogin {
 	    driver.findElement(By.id("saveButton")).click();
 	    Thread.sleep(5000);
 
-		//System.out.println(driver.getTitle());
+		System.out.println("Finished Test case Spectrum Login");
 	    
 	    driver.close();
 	    driver.quit();
