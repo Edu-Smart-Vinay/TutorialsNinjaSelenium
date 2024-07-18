@@ -3,8 +3,9 @@
 <suite parallel="classes" name="Client Portal Suite">
   <test thread-count="5" parallel="classes" name="Client Portal Test">
     <classes>
+		<!-- The classes which are added here will only be tested as part of this test suite -->
       <class name="com.tutorialsninja.qa.testcases.spectrumLogin"/>
-      <class name="com.tutorialsninja.qa.testcases.Login"/>
+      <!--<class name="com.tutorialsninja.qa.testcases.Login"/>-->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

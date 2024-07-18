@@ -67,6 +67,7 @@
           <configuration>
 			  <suiteXmlFiles>
 				  <suiteXmlFile>TestRunners/testng.xml</suiteXmlFile>
+				  <suiteXmlFile>TestRunners/testngexternal.xml</suiteXmlFile>
 			  </suiteXmlFiles>
 		  </configuration>
         </plugin>
