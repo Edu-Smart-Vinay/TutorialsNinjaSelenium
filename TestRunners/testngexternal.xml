@@ -3,6 +3,7 @@
 <suite name="External Suite">
 <listeners>
 	<listener class-name="com.tutorialsninja.qa.testcases.Listeners"></listener>
+	<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
 </listeners>
   <test thread-count="5" name="External Test">
     <classes>

@@ -20,33 +20,25 @@ public class spectrumLogin {
 	public void test() throws InterruptedException{
 
 		WebDriver driver ;
-
 		driver = new ChromeDriver(); 
-		
-		
 		driver.manage().window().maximize();
 		
 		System.out.println("Spectrum Login Test case");
 		driver.get("https://vm-qc-rt-5.iongroup.net/ClientPortal/login.aspx"); 
-		
 		Thread.sleep(2000);
-		
+		//Login Screen
 		WebElement username = driver.findElement(By.name("ctl00$MasterPageContent$txtUserName"));
 		username.sendKeys("fss");
 		Thread.sleep(2000);
 		driver.findElement(By.name("ctl00$MasterPageContent$txtPassword")).sendKeys("fssfss");
 		driver.findElement(By.name("ctl00$MasterPageContent$btnSubmit")).click();
-		Thread.sleep(5000);
-		
-		
-		
+		Thread.sleep(5000);	
+		//Home Page
 		driver.findElement(By.xpath("//*[contains(text(),'Dealing')]")).click();
-		
 		driver.findElement(By.xpath("//*[contains(text(),' New Transactions ')]")).click();
-		
 		driver.findElement(By.xpath("//input[@value = 'New Transaction']")).click();
-		Thread.sleep(5000);
-	    //Entering contract amount
+		Thread.sleep(5000);	
+	    //Entry screen - Entering contract amount
 		driver.findElement(By.xpath("//input[@formcontrolname='contractAmount']")).clear();
 		driver.findElement(By.xpath("//input[@formcontrolname='contractAmount']")).click();
 		Thread.sleep(5000);
@@ -58,26 +50,20 @@ public class spectrumLogin {
 	    WebElement counterCurrency = driver.findElement(By.xpath("//input[@placeholder='Search Currencies']"));
 	    counterCurrency.click();
 	    counterCurrency.sendKeys("EUR");
-	    //counterCurrency.sendKeys(Keys.ENTER);
-	    //counterCurrency.sendKeys(Keys.RETURN);
 	    Thread.sleep(3000);
 	    Actions action = new Actions(driver);
 	    action.sendKeys(counterCurrency,Keys.ENTER).build().perform();
 	    System.out.println("Done");
 	    Thread.sleep(5000);
-	    
 	    //clicking calendar
 	    driver.findElement(By.id("mat-input-12")).click();
 	    Thread.sleep(5000);
-	    
 	    //selecting 26th February 2024
 	    driver.findElement(By.xpath("//table[@class='mat-calendar-table']/tbody/tr[2]/td[2]")).click();
 	    Thread.sleep(5000);
-	    
 	    //Saving the trade	
 	    driver.findElement(By.id("saveButton")).click();
 	    Thread.sleep(5000);
-
 		System.out.println("Finished Test case Spectrum Login");
 	    
 	    driver.close();

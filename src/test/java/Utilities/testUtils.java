@@ -8,6 +8,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.testng.Reporter;
 
 import Common.BaseTest;
 
@@ -23,7 +24,13 @@ public class testUtils extends BaseTest{
 			 	Date currentdate = new Date(0);   
             	String date = currentdate.toString().replace("","-").replace(":","-");
 				FileUtils.copyFile(scrFile, new File(filepath+methodName+date+".png"));
-				System.out.println("***Placed screen shot in "+filepath+" ***");
+				Reporter.log("Placed screen shot in "+filepath);
+				String str= filepath+methodName+date+".png";
+				System.setProperty("org.uncommons.reporting.escape-output","false");
+				Reporter.log("<a href=\"C:\\Users\\jakkula.vinay\\TestNGHybridFramework\\TutorialsNinjaSelenium\\test-output\\Screenshots\\test2-1-9-7-0---0-1---0-1-.png\">Screenshot</a>");
+				//Reporter.log("<img src=\"" + str + "\">");
+				//System.out.println("***Placed screen shot in "+filepath+" ***");
+				
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

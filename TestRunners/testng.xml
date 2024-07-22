@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite parallel="classes" name="Client Portal Suite">
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+		<listener class-name="com.tutorialsninja.qa.testcases.Listeners"></listener>
+	</listeners>
   <test thread-count="5" parallel="classes" name="Client Portal Test">
     <classes>
 		<!-- The classes which are added here will only be tested as part of this test suite -->
